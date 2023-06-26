@@ -20,7 +20,7 @@ docker compose up --build -d
    docker exec -it dating-service-backend-1 python manage.py migrate
    ```
 
-##Импортировать тестовые данные в бд 
+## Импортировать тестовые данные в бд 
 
 ```bash
 docker exec -it dating-service-backend-1 python manage.py export_participants -p participants.jsonl
