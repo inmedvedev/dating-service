@@ -15,10 +15,10 @@ cd dating-service
 ```bash
 docker compose up --build -d
 ```
-5) Запустить миграцию
-   ```bash
-   docker exec -it dating-service-backend-1 python manage.py migrate
-   ```
+4) Запустить миграцию
+```bash
+docker exec -it dating-service-backend-1 python manage.py migrate
+```
 
 ## Импортировать тестовые данные в бд 
 
