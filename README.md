@@ -19,10 +19,12 @@ docker compose up --build -d
 ```bash
 docker exec -it dating-service-backend-1 python manage.py migrate
 ```
+Сервис будет доступен по адресу http://0.0.0.0:8000/
 
 ## Импортировать тестовые данные в бд 
 
 ```bash
 docker exec -it dating-service-backend-1 python manage.py export_participants -p participants.jsonl
 ```
+
 
