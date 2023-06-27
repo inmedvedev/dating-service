@@ -28,7 +28,7 @@ docker exec -it dating-service-backend-1 python manage.py migrate
 docker exec -it dating-service-backend-1 python manage.py export_participants -p participants.jsonl
 ```
 
-##Описание эндпоинтов
+## Описание эндпоинтов
 
 - /api/send_confirmation-code/ - отправка email'a, для которого требуется подтверждение
 - /api/login/ - логин, требуется ввод email и кода подтверждения, пришедшего на почту (сейчас сообщение пишется в консоль, smpt сервер настроен, нужно лишь поменять параметр EMAIL_BACKEND на  'django.core.mail.backends.smtp.EmailBackend') 
