@@ -11,11 +11,12 @@ git clone git@github.com:inmedvedev/dating-service.git
 cd dating-service
 ```
 3) Скопируйе .env файл (прислал HR'у)
+
 4)Соберите контейнеры и запустите
 ```bash
 docker compose up --build -d
 ```
-4) Запустить миграцию
+5) Запустить миграцию
 ```bash
 docker exec -it dating-service-backend-1 python manage.py migrate
 ```
@@ -27,4 +28,11 @@ docker exec -it dating-service-backend-1 python manage.py migrate
 docker exec -it dating-service-backend-1 python manage.py export_participants -p participants.jsonl
 ```
 
+##Описание эндпоинтов
+
+- /api/send_confirmation-code/ - отправка email'a, для которого требуется подтверждение
+- /api/login/ - логин, требуется ввод email и кода подтверждения, пришедшего на почту (сейчас сообщение пишется в консоль, smpt сервер настроен, нужно лишь поменять параметр EMAIL_BACKEND на  'django.core.mail.backends.smtp.EmailBackend') 
+- /api/preferences/ - получение и создание предпочтнеий для конкретного пользователя
+- /api/preferences/delete/{название предпочтения} - удаление предпочтения для конкретного пользователя
+- /api/rating/ - создать рейтинг наиболее совместимых участников, выполняется в Celery
 
